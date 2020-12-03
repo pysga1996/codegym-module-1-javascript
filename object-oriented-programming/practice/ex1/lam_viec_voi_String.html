@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm việc với String</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let str = 'Tôi yêu ngôn ngữ lập trình Javascript';
+    function count_appearances (string) {
+        let regExp1 = /a/g;
+        return string.match(regExp1).length;
+    }
+    document.write("Trong câu 'Tôi yêu ngôn ngữ lập trình Javascript' có " + count_appearances(str) + " chữ 'a'.<br>");
+    let arr = str.split(" ");
+    document.write("Chuỗi 'Tôi yêu ngôn ngữ lập trình Javascript' tách thành mảng: " + arr + ".<br>");
+    let regExp2 = /([\u0000-\u001F\u0021-\uE01EF])+/g;
+    document.write("Chuỗi 'Tôi yêu ngôn ngữ lập trình Javascript' có: " + str.match(regExp2).length + " từ.<br>" );
+    document.write("Chuỗi 'Tôi yêu ngôn ngữ lập trình Javascript' sau khi thay thế: " + str.replace('Javascript', "Typescript") + ".");
+</script>
+</body>
+</html>

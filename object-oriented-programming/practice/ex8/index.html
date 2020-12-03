@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo bắt Chuột</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function Rat(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = "alive";
+        this.cry = "chit-chit";
+    }
+    function Cat(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.cry = "meow-meow";
+        this.catchMouse = function (rat) {
+            console.log(this.name + " is trying to catch " + rat.name + ".");
+            if (this.speed > rat.speed && rat.status === "alive") {
+                this.speed = 0;
+                rat.speed = 0;
+                this.meal = rat;
+                console.log(this.name + " has caught " + rat.name + ".");
+            }
+        };
+        this.eatMouse = function () {
+            if (this.meal.status === "alive") {
+                this.meal.status = "dead";
+                this.weight += this.meal.weight;
+                this.meal.weight = 0;
+                console.log(this.name + " now is eating " + this.meal.name + ".");
+                console.log(this.meal.name + " died.");
+            }
+        }
+    }
+
+    let Tom = new Cat("Tom", 10, 50);
+    let Jerry = new Rat("Jerry", 0.5, 40);
+    console.log("Jerry cries " + Jerry.cry + ".");
+    console.log("Tom cries " + Tom.cry + ".");
+    Tom.catchMouse(Jerry);
+    Tom.eatMouse();
+    console.log("Tom now weighed " + Tom.weight +"kg.");
+</script>
+</body>
+</html>

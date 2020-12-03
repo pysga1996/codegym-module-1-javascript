@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+    <style>
+        span#connect {
+            color: green;
+        }
+        span#disconnect {
+            color: violet;
+        }
+        span.on {
+            color: blue;
+        }
+        span.off {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script charset="UTF-8">
+    function Lamp() {
+        this.status = false;
+        this.connectToASwitch = false;
+        this.turnOn = function turnOn() {
+            if (this.connectToASwitch) {
+                this.status = true;
+            }
+        };
+        this.turnOff = function turnOff() {
+            if (this.connectToASwitch) {
+                this.status = false;
+            }
+        };
+        this.light = function light() {
+            if (this.status) {
+                document.write("=> Trạng thái bóng đèn: <span class='on'>đang chiếu sáng.</span><br>");
+            }
+            else {
+                document.write("=> Trạng thái bóng đèn: <span class='off'>không chiếu sáng.</span><br>");
+            }
+        }
+    }
+    function SwitchButton(lamp) {
+        this.connectedToALamp = false;
+        this.connectToLamp = function connectToLamp() {
+            this.connectedToALamp = true;
+            lamp.connectToASwitch = true;
+            document.write("<span id='connect'>Đã kết nối công tắc với bóng đèn.</span><br>")
+        };
+        this.disconnectFromLamp = function connectToLamp() {
+            this.connectedToALamp = false;
+            lamp.connectToASwitch = false;
+            document.write("<span id='disconnect'>Đã ngắt kết nối công tắc khỏi bóng đèn.</span><br>")
+        };
+        this.switchOn = function() {
+            document.write("Bật công tắc.<br>");
+            if (this.connectedToALamp) {
+                lamp.turnOn();
+            }
+        };
+        this.switchOff = function() {
+            document.write("Tắt công tắc.<br>");
+            if (this.connectedToALamp) {
+                lamp.turnOff();
+            }
+        }
+    }
+    let electric_lamp = new Lamp();
+    let new_switch = new SwitchButton(electric_lamp);
+    new_switch.connectToLamp();
+    for (let i = 0; i < 5; i++) {
+        new_switch.switchOn();
+        electric_lamp.light();
+        new_switch.switchOff();
+        electric_lamp.light();
+    }
+    new_switch.disconnectFromLamp();
+    for (let i = 0; i < 5; i++) {
+        new_switch.switchOn();
+        electric_lamp.light();
+        new_switch.switchOff();
+        electric_lamp.light();
+    }
+</script>
+</body>
+</html>

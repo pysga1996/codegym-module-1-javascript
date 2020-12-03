@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body onload="validate_date(prompt('Nhập chuỗi ngày tháng năm dạng DD/MM/YYYY'))">
+<script charset="UTF-8">
+let regExp = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+function validate_date(date) {
+    console.log(regExp.test(date));
+}
+</script>
+</body>
+</html>

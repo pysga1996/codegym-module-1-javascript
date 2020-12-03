@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng mảng</title>
+    <link rel="stylesheet" href="ung_dung_quan_ly_san_pham_su_dung_mang.css" type="text/css">
+</head>
+<body onload="showProducts(listProducts, products_table)">
+<h3>Add New Product</h3>
+<form id="add_area">
+    <label for="new_product"></label><input id="new_product" type="text" placeholder="New product" value=""/>
+    <input type="button" value="Add" onclick="addProducts(listProducts, this.parentElement.children[1].value)"/>
+</form>
+<h3>Display All Products</h3>
+<table>
+    <tbody>
+    <tr>
+        <th>Product Name</th>
+        <th></th>
+        <th id="product_line_quantity"></th>
+    </tr>
+    </tbody>
+    <tbody id="products">
+    </tbody>
+</table>
+<h3 id="edit_title">Edit</h3>
+<form id="edit_area">
+    <label for="new_product_to_replace"></label><input type="text" id="new_product_to_replace" value=""/>
+    <label for="edit_button"></label><input type="button" id="edit_button" value="Edit" onclick="editProducts()"/>
+</form>
+<script charset="UTF-8" src="ung_dung_quan_ly_san_pham_su_dung_mang.js"></script>
+</body>
+</html>

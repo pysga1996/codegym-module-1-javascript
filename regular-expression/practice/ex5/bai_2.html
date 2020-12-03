@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body onload="count_words(prompt('Nhập chuỗi cần đếm'))">
+<script charset="UTF-8">
+    let regExp = /([\u0000-\u001F\u0021-\uE01EF])+/g;
+    function count_words(string) {
+        console.log((string.match(regExp) || []).length);
+    }
+</script>
+</body>
+</html>

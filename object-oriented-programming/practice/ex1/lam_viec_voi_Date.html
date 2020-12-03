@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm việc với Date</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let my_birthday = new Date(1996, 8, 25, 10, 33, 30, 0);
+    let current_date = new Date();
+    document.write("Tôi đã sống " + (current_date.getFullYear() - my_birthday.getFullYear()) + " năm<br>");
+    function checkLeapYear(year_to_check) {
+        let isLeapYear = false;
+        let isDivisibleBy4 = year_to_check % 4 === 0;
+        if (isDivisibleBy4) {
+            let isDivisibleBy100 = year_to_check % 100 === 0;
+            if (isDivisibleBy100) {
+                let isDivisibleBy400 = year_to_check % 400 === 0;
+                if (isDivisibleBy400) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+        return isLeapYear;
+    }
+    function count_months() {
+        let months_count = 11 - my_birthday.getMonth();
+        for (let year_count = my_birthday.getFullYear(); year_count < current_date.getFullYear(); year_count++) {
+            months_count += 12;
+        }
+        months_count += (current_date.getMonth() + 1);
+        return months_count;
+    }
+    document.write("Tôi đã sống " + count_months() + " tháng<br>");
+    function count_day() {
+        let days_count;
+        switch (my_birthday.getMonth()) {
+            case 0:
+            case 2:
+            case 4:
+            case 6:
+            case 7:
+            case 9:
+            case 11:
+                days_count = 31 - my_birthday.getDate();
+                break;
+            case 3:
+            case 5:
+            case 8:
+            case 10:
+                days_count = 30 - my_birthday.getDate();
+                break;
+            case 1:
+                if (checkLeapYear(my_birthday.getFullYear())) {
+                    days_count = 29 - my_birthday.getDate();
+                }
+                else {
+                    days_count = 28 - my_birthday.getDate();
+                }
+                break;
+        }
+        for (let i = my_birthday.getMonth() + 1; i <= 11; i++) {
+            switch (i) {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                case 7:
+                case 9:
+                case 11:
+                    days_count += 31;
+                    break;
+                case 3:
+                case 5:
+                case 8:
+                case 10:
+                    days_count += 30;
+                    break;
+                case 1:
+                    if (checkLeapYear(my_birthday.getFullYear())) {
+                        days_count += 29;
+                    }
+                    else {
+                        days_count += 28;
+                    }
+                    break;
+            }
+        }
+        for (let j = (my_birthday.getFullYear() + 1); j < current_date.getFullYear(); j++) {
+            if (checkLeapYear(j)) {
+                days_count += 366;
+            }
+            else {
+                days_count += 365;
+            }
+        }
+        for (let k = 0; k < current_date.getMonth(); k++) {
+            switch (k) {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                case 7:
+                case 9:
+                case 11:
+                    days_count += 31;
+                    break;
+                case 3:
+                case 5:
+                case 8:
+                case 10:
+                    days_count += 30;
+                    break;
+                case 1:
+                    if (checkLeapYear(current_date.getFullYear())) {
+                        days_count += 29;
+                    }
+                    else {
+                        days_count += 28;
+                    }
+                    break;
+            }
+        }
+        days_count += current_date.getDate();
+        return days_count;
+    }
+    document.write("Tôi đã sống " + count_day() + " ngày<br>");
+    function count_hours() {
+        let hours_count;
+        hours_count = count_day() * 24 - my_birthday.getHours() + current_date.getHours();
+        return hours_count;
+    }
+    document.write("Tôi đã sống " + count_hours() + " giờ<br>");
+    function count_minutes() {
+        let minutes_count;
+        minutes_count = count_hours() * 60 - my_birthday.getMinutes() + current_date.getMinutes();
+        return minutes_count;
+    }
+    document.write("Tôi đã sống " + count_minutes() + " phút<br>");
+    function count_seconds() {
+        let seconds_count;
+        seconds_count = count_minutes() * 60 - my_birthday.getSeconds() + current_date.getSeconds();
+        return seconds_count;
+    }
+    document.write("Tôi đã sống " + count_seconds() + " giây<br>");
+</script>
+</body>
+</html>

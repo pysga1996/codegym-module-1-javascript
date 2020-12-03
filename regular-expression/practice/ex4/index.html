@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác thực tài khoản</title>
+</head>
+<body>
+<script charset="UTF-8s">
+    let regExp = /^[_a-z0-9]{6,}$/;
+    function validate_account(account) {
+        return (regExp.test(account));
+    }
+    console.log(validate_account("123abc_"));
+    console.log(validate_account("_abc123"));
+    console.log(validate_account("______"));
+    console.log(validate_account("123456"));
+    console.log(validate_account("abcdefg"));
+    console.log(validate_account(".@"));
+    console.log(validate_account("12345"));
+    console.log(validate_account("1234_"));
+    console.log(validate_account("abcde"));
+</script>
+</body>
+</html>

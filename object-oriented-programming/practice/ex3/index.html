@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp Temperature</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function Temperature_C(x) {
+        this.value = x;
+        this.convert_to_F = function convert_to_F() {
+            return 9 / 5 * this.value + 32;
+        };
+        this.convert_to_K = function convert_to_K() {
+            return this.value + 273.15;
+        }
+    }
+    let temperature_C_1 = new Temperature_C(25);
+    document.write("Nhiệt độ 25 độ C quy đổi sang độ F là " + temperature_C_1.convert_to_F() + "<br>");
+    document.write("Nhiệt độ 25 độ C quy đổi sang độ K là " + temperature_C_1.convert_to_K());
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body onload="check_password(prompt('Nhập mật khẩu để kiểm tra: Mật khẩu chứ it nhất 8 ký tự, ít nhất 1 ký tự in hoa, 1 ký tự in thường và 1 ký tự số'))">
+<script charset="UTF-8">
+    let regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/g;
+    function check_password(string) {
+        if (regExp.test(string) === true) {
+            alert("Mật khẩu hợp lệ");
+        }
+        else {
+            alert('Mật khẩu không hợp lệ');
+        }
+        console.log(regExp.test(string));
+    }
+</script>
+</body>
+</html>

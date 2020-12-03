@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác thực tên của lớp học</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let regExp = /^[CAP][0-9]{4}[GHIKLM]$/;
+    function validate_class_name(class_name) {
+        return regExp.test(class_name);
+    }
+    console.log(validate_class_name(("C0318G")));
+    console.log(validate_class_name(("M0318G")));
+    console.log(validate_class_name(("P0323A")));
+</script>
+</body>
+</html>

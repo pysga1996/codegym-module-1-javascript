@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote điều khiển Tivi</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function Remote(code, tivi) {
+        this.code = code;
+        this.turnOn = function () {
+            console.log("Dùng điều khiển bật TV");
+            if (this.code === tivi.code) {
+                tivi.turnOn();
+            }
+        };
+        this.turnOff = function () {
+            console.log("Dùng điều khiển tắt TV");
+            if (this.code === tivi.code) {
+                tivi.turnOff();
+            }
+        };
+        this.controlChannel = function (channel) {
+            console.log("Dùng điều khiển chuyển đến kênh " + channel);
+            if (this.code === tivi.code) {
+                tivi.controlChannel(channel);
+            }
+        };
+        this.controlVolume = function (volume_up_down) {
+            console.log("Dùng điều khiển " + volume_up_down + " mức âm lượng");
+            if (this.code === tivi.code) {
+                tivi.controlVolume(volume_up_down);
+            }
+        };
+    }
+    function Tivi(code, channel, volume) {
+        this.code = code;
+        this.status = "Off";
+        this.current_channel = channel;
+        this.current_volume = volume;
+        this.turnOn = function () {
+            this.status = "On";
+            console.log("Trạng thái TV: " + this.status);
+        };
+        this.turnOff = function () {
+            this.status = "Off";
+            console.log("Trạng thái TV: " + this.status);
+        };
+        this.controlChannel = function (channel) {
+            if (this.status === "On") {
+                this.current_channel = channel;
+            }
+            console.log("Kênh đang chiếu: Kênh " + this.current_channel);
+        };
+        this.controlVolume = function (volume_up_down) {
+            if (this.status === "On") {
+                this.current_volume += volume_up_down;
+            }
+            console.log("Âm lượng hiện tại của TV: " + this.current_volume);
+        }
+    }
+    let Samsung_Tivi = new Tivi(12345, 1, 50);
+    let Samsung_Remote = new Remote(12345, Samsung_Tivi);
+    Samsung_Remote.turnOn();
+    Samsung_Tivi.controlChannel(7);
+    Samsung_Remote.controlChannel(3);
+    Samsung_Tivi.controlVolume(+2);
+    Samsung_Remote.turnOff();
+</script>
+</body>
+</html>

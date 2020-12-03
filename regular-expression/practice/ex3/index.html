@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác thực email</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let regExp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+    function validate_email(email) {
+        console.log(email + " is " + regExp.test(email));
+    }
+    validate_email("a@gmail.com");
+    validate_email("ab@yahoo.com");
+    validate_email("abc@hotmail.com");
+    validate_email("@gmail.com");
+    validate_email("ab@gmail.");
+    validate_email("@#abc@gmail.com");
+</script>
+</body>
+</html>

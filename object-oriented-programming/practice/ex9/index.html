@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam và Eva</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function Apple() {
+        this.weight = 10;
+        this.getWeight = function() {
+            return this.weight;
+        }
+    }
+    function Person(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.bio = function () {
+            let x;
+            if (this.gender === "male") {
+                x = "người đàn ông";
+            }
+            else {x = "người đàn bà"}
+            console.log(this.name + ": Xin chào! Tên tôi là " + this.name + ", tôi là " + x + " đầu tiên trên trần gian, tôi nặng " + this.weight + "kg.")
+        };
+        this.eatFood = function (food) {
+            food.weight--;
+        };
+        this.checkFoodWeight = function (food) {
+            food.getWeight();
+        };
+        this.getName = function() {
+            return this.name;
+        };
+        this.getGender = function() {
+            return this.gender;
+        };
+        this.getWeight = function() {
+            return this.weight;
+        }
+    }
+    let rotten_apple = new Apple();
+    let Adam = new Person("Adam", "male", 65);
+    let Eva = new Person("Eva", "female", 50);
+    Adam.bio();
+    Eva.bio();
+    while (rotten_apple.weight > 0) {
+        Adam.eatFood(rotten_apple);
+        console.log("Adam cắn một miếng táo!");
+        Eva.eatFood(rotten_apple);
+        console.log("Eva cũng cắn một miếng táo!");
+        if (rotten_apple.getWeight() === 0) {
+            console.log("Adam và Eva đã ăn hết quả táo")
+        }
+        else {console.log("Quả táo chỉ còn nặng " + rotten_apple.getWeight() + " đơn vị");}
+    }
+</script>
+</body>
+</html>

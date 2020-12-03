@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Game lái xe</title>
+    <link rel="stylesheet" href="game_lai_xe.css" type="text/css">
+</head>
+<body onload="docReady()">
+<canvas id="road" width="600" height="755"></canvas>
+<canvas id="centre_line" width="600" height="755"></canvas>
+<img id="car" src="images/red_car_resize.png" alt="Red Racing Car" style="position: absolute;
+     width: 100px;
+     height: 200px;
+     left: 25px;
+     top: 40px;">
+<div id="game_over">
+    <h3>Trò chơi kết thúc</h3>
+    <input type="button" value="Chơi lại" onclick="RacingGameBoard.restart()">
+</div>
+<div id="game_start">
+    <h3>Bắt đầu trò chơi</h3>
+    <input type="button" value="Chơi" onclick="RacingGameBoard.start()">
+</div>
+<div id="car_speed_area">
+    <h3>Tốc độ</h3>
+    <text id="car_speed"></text>
+</div>
+<div id="instruction">
+    <h3>Hướng dẫn</h3>
+    <ul>
+        <li>Di chuyển xe bằng phím mũi tên.</li>
+        <li>Tăng tốc bằng phím W, giảm tốc bằng phím S.</li>
+        <li>Nhấn Enter để bắt đầu.</li>
+        <li>Nhấn Esc để thoát.</li>
+    </ul>
+</div>
+<div id="score_board">
+    <h3>Điểm</h3>
+    <text id="score">0</text>
+    <h3>Điểm cao nhất</h3>
+    <text id="high_score">0</text>
+</div>
+<script charset="UTF-8" src="game_lai_xe.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1500" height="700" style="border:1px solid black;"></canvas>
+<script charset="UTF-8">
+    function Rectangle(x, y) {
+        this.width = x;
+        this.height = y;
+        this.area_cal = function area_cal() {
+            return this.width * this.height;
+        };
+        this.perimeter_cal = function perimeter_cal() {
+            return (this.width + this.height) * 2 ;
+        };
+        this.draw_rectangle = function createRectangle() {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.strokeRect(200, 200, this.width, this.height);
+        }
+    }
+    let rectangle_1 = new Rectangle(150, 100);
+    rectangle_1.draw_rectangle();
+    document.write("<br>Diện tích hình chữ nhât là " + rectangle_1.area_cal() + "<br>");
+    document.write("Chu vi hình chữ nhât là " + rectangle_1.perimeter_cal());
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whack The Mole</title>
+    <link rel="stylesheet" href="whack_the_mole.css" type="text/css">
+</head>
+<body>
+<div id="control">
+    <button onclick="my_garden.start(); background_music.play()">Start</button>
+    <button onclick="my_garden.stop(); background_music.stop()">Stop</button>
+</div>
+<img src="images/background.jpg" alt="" id="background">
+<canvas id="game_board" height="600" width="600" style="top: 70px; left: 500px;" onclick="my_garden.whack(event);"></canvas>
+<div id="score_board">
+    <h3>Score</h3>
+    <span id="score_display"></span>
+    <h3>High Score</h3>
+    <span id="high_score_display"></span>
+    <h3>Countdown Timer</h3>
+    <span id="countdown_timer_display"></span>
+</div>
+<img src="images/mole.png" alt="mole" id="mole">
+<img src="images/confuse_mole_1.png" alt="confuse_mole" id="confuse_mole_1">
+<img src="images/confuse_mole_2.png" alt="confuse_mole" id="confuse_mole_2">
+<img src="images/confuse_mole_3.png" alt="confuse_mole" id="confuse_mole_3">
+<img src="images/star.png" alt="star" id="star">
+<audio id="background_music" preload="auto">
+    <source src="sounds/alola_photo_club.mp3" type="audio/mpeg" >
+</audio>
+<audio controls id="hammer_hit_sound">
+    <source src="sounds/wood_hammer_hit.mp3" type="audio/mpeg" >
+</audio>
+<script charset="UTF-8" src="whack_the_mole.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm việc với Math</title>
+    <style>
+        input#exponential {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="Sinh số ngẫu nhiên" onclick="document.getElementById('random_from_0_to_10').innerText = String(random_from_0_to_10())"> từ 0 đến 10: <text id="random_from_0_to_10"></text>
+<br>
+<input type="button" value="Sinh số ngẫu nhiên" onclick="document.getElementById('random_from_0_to_400').innerText = String(random_from_0_to_400())"> từ 0 đến 400: <text id="random_from_0_to_400"></text>
+<br>
+<input type="button" value="Sinh số ngẫu nhiên" onclick="document.getElementById('random_from_50_to_100').innerText = String(random_from_50_to_100())"> từ 50 đến 100: <text id="random_from_50_to_100"></text>
+<br>
+<input type="button" value="Tìm" onclick="document.getElementById('min').innerText = String(Math.min(5, 7, 2, 9))"> số nhỏ nhất trong 5, 7, 2, 9: <text id="min"></text>
+<br>
+<input type="button" value="Tính" onclick="document.getElementById('result').innerText = String(Math.pow(53, document.getElementById('exponential').value))"> lũy thừa bậc <input id="exponential" type="number"> của 53: <text id="result"></text>
+<br>
+<input type="button" value="Tính" onclick="document.getElementById('area').innerText = String(Math.pow(5, 2) * Math.PI) + 'cm'"> diện tích của hình tròn bán kính là 5cm: <text id="area"></text>
+<br>
+<script charset="UTF-8">
+    function random_from_0_to_10() {
+        return Math.floor(Math.random() * (11));
+    }
+    function random_from_0_to_400() {
+        return Math.floor(Math.random() * (401));
+    }
+    function random_from_50_to_100() {
+        return Math.floor(Math.random() * (51)) + 50;
+    }
+</script>
+</body>
+</html>

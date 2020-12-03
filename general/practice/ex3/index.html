@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm đầu số mạng Viettel</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let phone_numbers = ["0935156163", "0917458888", "0379853477", "0935157821", "0902490218", "0913616666", "0353015227", "0902375024", "0339419833", "0352091422", "0916378888", "0342289077"];
+    let viettel_pattern = /0(86|96|97|98|32|33|34|35|36|37|38|39)[0-9]{7}/;
+    let viettel_numbers = [];
+    for (let i = 0; i < phone_numbers.length; i++) {
+        if (viettel_pattern.test(phone_numbers[i])) {
+            viettel_numbers.push(phone_numbers[i]);
+        }
+    }
+    document.write("Mảng số điện thoại ban đầu: " + phone_numbers.to + "<br>");
+    document.write("Mảng số điện thoại Viettel: " + viettel_numbers);
+</script>
+</body>
+</html>

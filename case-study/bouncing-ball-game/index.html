@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bóng nảy</title>
+    <link rel="stylesheet" href="bouncing_ball.css" type="text/css">
+</head>
+<body onload="docReady()">
+<canvas id="play_board" height="750" width="750"></canvas>
+<div id="game_start">
+    <h3>Bắt đầu trò chơi</h3>
+    <input id="play_button" type="button" value="Chơi" onclick="game_board.start();">
+</div>
+<div id="game_over">
+    <h3>Trò chơi kết thúc</h3>
+    <input id="replay_button" type="button" value="Chơi lại" onclick="game_board.restart();">
+</div>
+<div id="score_board">
+    <h3>Điểm</h3>
+    <text id="score">0</text>
+    <h3>Điểm cao nhất</h3>
+    <text id="high_score">0</text>
+    <h3>Độ khó</h3>
+    <text id="level">1</text>
+</div>
+<div id="instruction">
+    <h3>Hướng dẫn</h3>
+    <ul>
+        <li>Di chuyển thanh đỡ bằng phím mũi tên sang trái, sang phải.</li>
+        <li>Tăng, giảm độ khó bằng phím w, s.</li>
+        <li>Dùng phím Enter để bắt đầu, Esc để thoát.</li>
+    </ul>
+</div>
+<script charset="UTF-8" src="bouncing_ball.js"></script>
+</body>
+</html>

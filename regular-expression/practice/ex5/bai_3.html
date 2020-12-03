@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body onload="count_vowel_and_consonant(prompt('Nhập chuỗi cần đếm'))">
+<script charset="UTF-8">
+    let regExp_vowel = /[aeiou\u00C0-\u0103\u0128-\u1EF9]/ig;
+    let regExp_consonant = /[b-df-hj-np-tv-z\u0110-\u0111]/ig;
+    function count_vowel_and_consonant(string) {
+        console.log("Numbers of vowel = " + (string.match(regExp_vowel) || []).length);
+        console.log("Numbers of consonant = " + (string.match(regExp_consonant) || []).length);
+    }
+</script>
+</body>
+</html>

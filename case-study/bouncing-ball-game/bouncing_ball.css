@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+canvas#play_board {
+    position: absolute;
+    top: 2px;
+    left: 435px;
+    background-color: lightgrey;
+    border: 1px solid black;
+}
+div#score_board {
+    position: absolute;
+    padding: 20px;
+    top: 2px;
+    left: 1200px;
+    width: 150px;
+    height: 130px;
+    background-color: khaki;
+    text-align: center;
+}
+div#game_over {
+    position: absolute;
+    padding: 20px;
+    top: 300px;
+    left: 715px;
+    width: 150px;
+    background-color: lightgreen;
+    text-align: center;
+    display: none;
+}
+div#game_start {
+    position: absolute;
+    padding: 20px;
+    top: 300px;
+    left: 715px;
+    width: 150px;
+    background-color: orchid;
+    text-align: center;
+    display: block;
+}
+div#game_start {
+    position: absolute;
+    padding: 20px;
+    top: 300px;
+    left: 715px;
+    width: 150px;
+    background-color: orchid;
+    text-align: center;
+    display: block;
+}
+div#instruction {
+    position: absolute;
+    padding: 20px;
+    top: 2px;
+    left: 220px;
+    width: 160px;
+    height: 160px;
+    background-color: lightblue;
+    text-align: center;
+}
+li {
+    list-style-position: inside;
+}
