@@ -1,0 +1,1 @@
+Đây là bài thực hành nhúng javascript.

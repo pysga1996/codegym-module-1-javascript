@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let c_degree = Number(prompt("Nhập nhiệt độ (C)", ""));
+    let f_degree = (c_degree * 9 / 5) + 32;
+    if (isNaN(c_degree)) {
+        document.write("Nhiệt độ bạn nhập không phải là một ký tự số");
+    }
+    else {document.write("Nhiệt độ (F) là " + f_degree);}
+</script>
+</body>
+</html>

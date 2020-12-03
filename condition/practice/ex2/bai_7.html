@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập hệ số bậc 2 của phương trình bậc 1", ""));
+    let b = Number(prompt("Nhập hệ số bậc 1 của phương trình bậc 1", ""));
+    let c = Number(prompt("Nhập hằng số của phương trình bậc 1", ""));
+    let delta;
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.write("Hệ số của phương trình bạn nhập không phải là một ký tự số");
+    }
+    else {
+        delta = b * b - 4 * a * c;
+        if (delta > 0) {
+            x1 = (- b - Math.sqrt(delta)) / (2 * a);
+            x2 = (- b + Math.sqrt(delta)) / (2 * a);
+            document.write("Phương trình có hai nghiệm là:<br>");
+            document.write("x1 = " + x1 + "<br>");
+            document.write("x2 = " + x2);
+        }
+        else if (delta === 0) {
+            x1 = (- b) / (2 * a);
+            x2 = (- b) / (2 * a);
+            document.write("Phương trình có một nghiệm là x = " + x1);
+        }
+        else {
+            document.write("Phương trình vô nghiệm");
+        }
+    }
+
+
+</script>
+</body>
+</html>

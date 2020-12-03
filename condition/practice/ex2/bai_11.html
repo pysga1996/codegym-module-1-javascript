@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<form action="" method="get">
+    <div>
+        <h3>Biểu mẫu tính thuế thu nhập cá nhân</h3>
+    </div>
+    <div id="total_income_area">
+        <h4>Tổng thu nhập:</h4>
+        <label for="total_income"><input type="number" id="total_income" oninput="this.value = Math.abs(this.value)"></label> đồng
+    </div>
+    <div id="taxpayer_type_area">
+        <h4>Đối tượng tính thuế:</h4>
+        <label for="taxpayer_type"><select name="Taxpayer Type" id="taxpayer_type">
+            <option value="Under 3 Months Labor Contract" id="under_3_months_labor_contract">Cá nhân cư trú ký hợp đồng lao động (HĐLĐ) có thời hạn từ 3 tháng trở lên</option>
+        <option value="3-Month or Higher Labor Contract" id="3_month_or_higher_labor_contract">Cá nhân cư trú ký HĐLĐ dưới 3 tháng hoặc không ký HĐLĐ</option>
+        <option value="Non-resident individuals" id="non_resident_individuals">Cá nhân không cư trú</option>
+        </select></label>
+    </div>
+    <div id="tax_free_items_area">
+        <h4>Các khoản miễn thuế:</h4>
+        <ul id="tax_free_items">
+            <li>Thu nhập từ chuyển nhượng, nhận thừa kế, tặng cho bất động <br>sản (BĐS) giữa vợ với chồng; cha đẻ, mẹ đẻ với con đẻ…:
+                <label for="tax_free_item_1"><input type="number" id="tax_free_item_1"></label> đồng</li>
+            <li>Thu nhập từ chuyển nhượng nhà ở, quyền sử dụng đất (QSDĐ) ở <br>và tài sản gắn liền với đất ở của cá nhân trong trường hợp cá nhân chỉ có một nhà ở, đất ở duy nhất;
+                <label for="tax_free_item_2"><input type="number" id="tax_free_item_2"></label> đồng</li>
+            <li>Phần tiền lương làm việc ban đêm, làm thêm giờ được trả cao hơn <br> so với tiền lương làm việc ban ngày, làm trong giờ theo quy định của pháp luật;
+                <label for="tax_free_item_3"><input type="number" id="tax_free_item_3"></label> đồng</li>
+            <li>Thu nhập từ lãi tiền gửi tại tổ chức tín dụng, lãi từ hợp đồng bảo hiểm nhân thọ…
+                <label for="tax_free_item_4"><input type="number" id="tax_free_item_4"></label> đồng</li>
+        </ul>
+    </div>
+    <div id="tax_reductions_items_area">
+        <h4>Các khoản giảm trừ thuế:</h4>
+        <ul id="tax_reductions_items">
+            <li>Giảm trừ gia cảnh cho bản thân người nộp thuế:
+                <label for="tax_reduction_item_1"><input type="number" id="tax_reduction_item_1"></label> đồng</li>
+            <li>Giảm trừ gia cảnh cho người phụ thuộc:
+                <label for="tax_reduction_item_2"><input type="number" id="tax_reduction_item_2"></label> đồng</li>
+            <li>Giảm trừ đối với các khoản đóng bảo hiểm, Quỹ hưu trí tự nguyện:
+                <label for="tax_reduction_item_3"><input type="number" id="tax_reduction_item_3"></label> đồng</li>
+            <li>Các khoản đóng góp từ thiện, nhân đạo, khuyến học:
+                <label for="tax_reduction_item_4"><input type="number" id="tax_reduction_item_4"></label> đồng</li>
+        </ul>
+    </div>
+    <div id="non_taxable_items_area">
+        <h4>Các khoản không chịu thuế:</h4>
+        <ul id="non_taxable_items">
+            <li>Tiền ăn trưa, ăn giữa ca không vượt quá 730.000 đồng/tháng:
+                <label for="non_taxable_item_1"><input type="number" id="non_taxable_item_1"></label> đồng</li>
+            <li>Tiền phụ cấp trang phục không quá 5.000.000 đồng/năm (Miễn toàn bộ nếu chi bằng hiện vật):
+                <label for="non_taxable_item_2"><input type="number" id="non_taxable_item_2"></label> đồng</li>
+            <li>Phụ cấp điện thoai, tiền xăng, tiền công tác phí (theo Quy chế công ty)…
+                <label for="non_taxable_item_3"><input type="number" id="non_taxable_item_3"></label> đồng</li>
+        </ul>
+    </div>
+    <div id="result_area">
+        <h4>Số thuế phải nộp</h4>
+        <ul>
+            <li>Thu nhập chịu thuế: <span id="taxable_income_result">________________</span> đồng</li>
+            <li>Thu nhập tính thuế: <span id="assessable_income_result">________________</span> đồng</li>
+            <li>Thuế suất thuế TNCN: <span id="tax_rate_result">________________</span>%</li>
+            <li>Thuế TNCN phải nộp: <span id="personnel_income_tax_result">________________</span> đồng</li>
+        </ul>
+        <label for="tax_cal_button"></label><input type="button" value="Tính thuế" id="tax_cal_button">
+    </div>
+</form>
+<script charset="UTF-8" src="bai_11.js"></script>
+</body>
+</html>

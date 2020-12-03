@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    position: absolute;
+    left: 40rem;
+    top: 1rem;
+}
+button#yes {
+    box-sizing: border-box;
+    position: absolute;
+    color: blue;
+    left: 40rem;
+    top: 5rem;
+    width: 4rem;
+    height: 2rem;
+}
+button#no {
+    box-sizing: border-box;
+    position: absolute;
+    left: 46rem;
+    top: 5rem;
+    width: 4rem;
+    height: 2rem;
+}

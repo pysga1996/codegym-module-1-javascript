@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<script>
+    let principal = Number(prompt("Điền số tiền gốc", ""));
+    let interest_rate = Number(prompt("Điền lãi suất (%)", ""));
+    let month = Number(prompt("Điền số tháng gửi tiền", ""));
+    let interest;
+    if (principal < 0 || isNaN(principal)) {principal = 0}
+    if (interest_rate < 0 || isNaN(interest_rate)) {interest_rate = 0}
+    if (month < 0 || isNaN(month)) {month = 0}
+    interest = (principal * (Math.pow(1 + interest_rate / 100, month) - 1)).toLocaleString();
+    document.write("Số tiền lãi sau " + month + " tháng là " + interest + " đồng");
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Su khac biet let va var</title>
+</head>
+<body>
+<button onclick="showMessage();">SHOW MMessage! </button>
+<script charset="UTF-8">
+    function showMessage() {
+        var msg = "CodeGym";
+        if (true) {
+            var msg = "CodeGym 2";
+        }
+        alert(msg);
+    }
+    /* Dùng var sẽ gán giá trị mới vào biến cũ, dùng let thì
+    sẽ tạo ra biến mới tạm thời và khi thoát khỏi câu lệnh
+    biến đó sẽ biến mất nếu trùng với 1 biến khác ở ngoài
+     */
+</script>
+</body>
+</html>

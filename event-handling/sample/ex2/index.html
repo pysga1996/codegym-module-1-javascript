@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển hình </title>
+</head>
+<body onload="docReady()">
+<img id="nobita" src="images/nobita.png" alt="Đây là Nobita" style="position:absolute;left:0; top:0;" height="210" width="188"/>
+<script charset="UTF-8">
+	let element = document.getElementById("nobita");
+    function upArrowPressed() {
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+    function downArrowPressed() {
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+    function leftArrowPressed() {
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+    function rightArrowPressed() {
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+    }
+    function moveSelection(evt) {
+        switch (evt.key) {
+            case 'ArrowLeft':
+                leftArrowPressed();
+                break;
+            case 'ArrowRight':
+                rightArrowPressed();
+                break;
+            case 'ArrowUp':
+                upArrowPressed();
+                break;
+            case 'ArrowDown':
+                downArrowPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>

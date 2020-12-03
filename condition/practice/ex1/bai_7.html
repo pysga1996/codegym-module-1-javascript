@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<div>Thuê bao <input type="number" pattern="[0][0-9]{3}-{0-9}{6}"></div>
+<div>Mạng:
+    <select name="Network Type" id="network_type">
+        <option value="PSTN">PSTN</option>
+        <option value="VoIP 171">VoIP 171</option>
+    </select>
+</div>
+<div>Số phút gọi: <br>
+    Nội mạng: <label for="internal_network"><input type="number" value="" id="internal_network"></label><br>
+    Ngoại mạng: <label for="external_network"><input type="number" value="" id="external_network"></label>
+</div>
+<div>Tiền cước phải thanh toán: <span id="total_charge">_____________</span> đồng</div>
+<input type="button" id="charge_cal_button" value="Tính cước">
+<script charset="UTF-8" src="bai_7.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập đô dài cạnh góc vuông a hình tam giác vuông", ""));
+    let b = Number(prompt("Nhập đô dài cạnh góc vuông b hình tam giác vuông", ""));
+    let area = a * b / 2;
+    if (isNaN(a) || isNaN(b)) {
+        document.write("Độ dài cạnh hình tam giác vuông bạn nhập không phải là một ký tự số");
+    }
+    else {document.write("Diện tích hình tam giác vuông là " + area);}
+</script>
+</body>
+</html>

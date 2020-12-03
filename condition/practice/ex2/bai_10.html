@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+    <link rel="stylesheet" href="bai_10.css" type="text/css">
+</head>
+<body>
+<form action="">
+    <h3>Biểu mẫu tính giá điện</h3>
+    <div>
+        Nhóm đối tượng khách hàng: <label for="consumer_type_group">
+        <select name="Consumer Type Group" id="consumer_type_group" onchange="select_consumer_type_group()">
+            <option value="Manufacturing" id="manufacturing">Các ngành sản xuất</option>
+            <option value="Administrative Career" id="administrative_career">Khối hành chính, sự nghiệp </option>
+            <option value="Busisness" id="business">Kinh doanh</option>
+            <option value="Living" id="living">Sinh hoạt</option>
+        </select></label>
+    </div>
+    <div>
+        Mức điện áp được cấp: <label for="voltage_level">
+        <select name="Voltage Level" id="voltage_level">
+            <option value="Low" id="low">Cấp điện áp dưới 6 kV</option>
+            <option value="Medium" id="medium">Cấp điện áp từ 6 kV đến dưới 22 kV</option>
+            <option value="Medium" id="medium_2">Cấp điện áp từ 6 kV trở lên</option>
+            <option value="High" id="high">Cấp điện áp từ 22 kV đến dưới 110 kV</option>
+            <option value="High" id="high_2">Cấp điện áp từ 22 kV trở lên</option>
+            <option value="Very High" id="very_high">Cấp điện áp từ 110 kV trở lên</option>
+            <option value="None" id="none">Không khả dụng</option>
+        </select></label>
+    </div>
+    <div id="kind_of_administrative_career_area">
+        Loại hình hành chính sự nghiệp:<label for="kind_of_administrative_career">
+        <select name="Kind of Administrative Career" id="kind_of_administrative_career">
+            <option value="Kind 1" id="kind_1">Bệnh viện, nhà trẻ, mẫu giáo, trường phổ thông</option>
+            <option value="Kind 2" id="kind_2">Chiếu sáng công cộng; đơn vị hành chính sự nghiệp</option>
+        </select></label>
+    </div>
+    <div id="retail_payment_type_area">
+        Hình thức thanh toán:<label for="retail_payment_type">
+        <select name="Retail Payment Type" id="retail_payment_type">
+            <option value="Postpaid" id="postpaid">Trả sau</option>
+            <option value="Prepaid" id="prepaid">Trả trước</option>
+        </select></label>
+    </div>
+    <div id="amount_of_comsumption_area">
+        Điện lượng tiêu thụ: <label for="amount_of_consumption"><input type="number" id="amount_of_consumption" disabled></label> kWh
+    </div>
+    <div id="hour_kind">
+        <ul>
+            <li>Giờ bình thường:<label for="common_hour_amount"><input type="number" id="common_hour_amount" value=""></label></li>
+            <li>Giờ thấp điểm:<label for="idle_hour_amount"><input type="number" id="idle_hour_amount" value=""></label></li>
+            <li>Giờ cao điểm:<label for="rush_hour_amount"><input type="number" id="rush_hour_amount" value=""></label></li>
+        </ul>
+    </div>
+    <div id="bill_area">
+        Số tiền điện phải thanh toán: <span id="bill">______________</span><span> đồng</span>
+    </div>
+    <div><label for="cal_button"><input type="button" value="Tính tiền điện" id="cal_button"></label></div>
+</form>
+<script charset="UTF-8" src="bai_10.js"></script>
+</body>
+</html>

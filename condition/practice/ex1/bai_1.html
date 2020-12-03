@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chia hết</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập số a", ""));
+    let b = Number(prompt("Nhập số b", ""));
+    while (Number.isInteger(Number(a)) === false){
+        a = Number(prompt("a phải là một số nguyên", ""));
+    }
+    while (Number.isInteger(Number(b)) === false){
+        b = Number(prompt("b phải là một số nguyên", ""));
+    }
+    if ((a % b) === 0){
+        alert("a chia hết cho b")
+    }
+    else {alert("a không chia hết cho b")}
+</script>
+</body>
+</html>

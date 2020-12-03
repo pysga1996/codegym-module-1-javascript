@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập hệ số bậc 1 của phương trình bậc 1", ""));
+    let b = Number(prompt("Nhập hằng số của phương trình bậc 1", ""));
+    let x = - b / a;
+    if (isNaN(a) || isNaN(b)) {
+        document.write("Hệ số của phương trình bạn nhập không phải là một ký tự số");
+    }
+    else {document.write("Nghiệm của phương trình bậc 1 là " + x);}
+</script>
+</body>
+</html>

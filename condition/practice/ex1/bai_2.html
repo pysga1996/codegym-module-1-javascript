@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tuổi đầu vào lớp 10</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập số tuổi của bạn", ""));
+    while ((Number.isInteger(a) === false) || (a < 0)) {
+        a = Number(prompt("Số tuổi phải là một số tự nhiên", ""))
+    }
+    if (a >= 15) {
+        document.write("Bạn đủ tuổi vào lớp 10")
+    }
+    else {document.write("Bạn chưa đủ tuổi vào lớp 10")}
+</script>
+</body>
+</html>

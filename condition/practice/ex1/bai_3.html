@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nguyên âm nguyên dương</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Hãy nhập số", ""));
+    while (Number.isInteger(a) === false) {
+        a = Number(prompt("Nhập số nguyên", ""));
+    }
+    if (a > 0) {
+        document.write("Số bạn nhập > 0")
+    }
+    else if (a < 0) {
+        document.write("Số bạn nhập < 0");
+    }
+    else {document.write("Số bạn nhập = 0")}
+</script>
+</body>
+</html>

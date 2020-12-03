@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Good-Fast-Cheap</title>
+    <link rel="stylesheet" href="good_fast_cheap.css" type="text/css">
+</head>
+<body>
+<div class="slider_container">
+    Good: <label for="good"><input type="range" min=1 max=2 id="good" class="slider" value=1></label><br>
+    Fast: <label for="fast"><input type="range" min=1 max=2 id="fast" class="slider" value=1></label><br>
+    Cheap: <label for="cheap"><input type="range" min=1 max=2 id="cheap" class="slider" value=1></label>
+</div>
+<script charset="UTF-8">
+    let good = document.getElementById("good");
+    let fast = document.getElementById("fast");
+    let cheap = document.getElementById("cheap");
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+    function good_move() {
+        if (good.value == 2 && fast.value == 2 && cheap.value == 2) {
+            if (getRndInteger(1, 2) === 1) {
+                fast.value = 1;
+            }
+            else {cheap.value = 1}
+        }
+    }
+    function fast_move() {
+        if (good.value == 2 && fast.value == 2 && cheap.value == 2) {
+            if (getRndInteger(1, 2) === 1) {
+                good.value = 1;
+            }
+            else {cheap.value = 1}
+        }
+    }
+    function cheap_move() {
+        if (good.value == 2 && fast.value == 2 && cheap.value == 2) {
+            if (getRndInteger(1, 2) === 1) {
+                good.value = 1;
+            }
+            else {fast.value = 1}
+        }
+    }
+    good.oninput = good_move;
+    fast.oninput = fast_move;
+    cheap.oninput = cheap_move;
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng bán hàng</title>
+</head>
+<body>
+<h1>Tính hoa hồng</h1>
+Doanh số: <label for="sales"><input type="number" value="" id="sales"></label><br>
+% hoa hồng nhận được: <span id="commission_percentage"></span><br>
+Mức hoa hồng nhận được: <span id="commission_amount">______________</span> đồng<br>
+<script charset="UTF-8">
+function commission_cal() {
+    let sales = Number(document.getElementById("sales").value);
+    let commission_percentage = document.getElementById("commission_percentage");
+    let commission_amount = document.getElementById("commission_amount");
+    if (sales < 3000000) {
+        commission_percentage.innerHTML = "0";
+        commission_amount.innerHTML = "0";
+    } else if (sales >= 3000000 && sales < 8000000) {
+        commission_percentage.innerHTML = "35%";
+        commission_amount.innerHTML = sales * parseFloat(commission_percentage.innerHTML) / 100;
+    } else if (sales >= 8000000 && sales < 15000000) {
+        commission_percentage.innerHTML = "38%";
+        commission_amount.innerHTML = sales * parseFloat(commission_percentage.innerHTML) / 100;
+    } else if (sales >= 15000000 && sales < 20000000) {
+        commission_percentage.innerHTML = "40%";
+        commission_amount.innerHTML = sales * parseFloat(commission_percentage.innerHTML) / 100;
+    } else if (sales >= 20000000 && sales < 28000000) {
+        commission_percentage.innerHTML = "42%";
+        commission_amount.innerHTML = sales * parseFloat(commission_percentage.innerHTML) / 100;
+    } else if (sales >= 28000000) {
+        commission_percentage.innerHTML = "45%";
+        commission_amount.innerHTML = sales * parseFloat(commission_percentage.innerHTML) / 100;
+    }
+}
+document.getElementById("sales").onkeyup = function () {
+    commission_cal();
+}
+</script>
+</body>
+</html>

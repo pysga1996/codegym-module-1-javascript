@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<form action="" method="get">
+    <label for="input_text"><input type="text" name="input" id="input_text" Value="Input your ID here"></label>
+    <input type="button" value="Đăng nhập" id="button">
+<script charset="UTF-8">
+    let button = document.getElementById("button");
+    let login = document.getElementById("input_text").value;
+    window.onkeyup = function() {
+    	login = document.getElementById("input_text").value;
+    };
+    button.onclick = function() {
+	    let message = (login === "Employee") ?
+	        "Hello" :
+	        (login === "Director") ?
+	            'Greetings' :
+	            (login === "") ?
+	                "No login" :
+	                "";
+        alert(message);
+    }
+</script>
+</form>
+</body>
+</html>

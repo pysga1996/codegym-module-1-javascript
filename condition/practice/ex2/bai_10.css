@@ -1,0 +1,21 @@
+option#medium_2 {
+    display: none;
+}
+option#high_2 {
+    display: none;
+}
+option#none {
+    display: none;
+}
+div#hour_kind {
+    display: block;
+}
+div#kind_of_administrative_career_area {
+    display: none;
+}
+div#retail_payment_type_area {
+    display: none;
+}
+input#amount_of_consumption {
+    display: inline;
+}

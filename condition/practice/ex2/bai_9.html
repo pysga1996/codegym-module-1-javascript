@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập độ dài cạnh a", ""));
+    let b = Number(prompt("Nhập độ dài cạnh b", ""));
+    let c = Number(prompt("Nhập độ dài cạnh c", ""));
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Độ dài cạnh bạn nhập không phải là một ký tự số");
+    }
+    else {
+        if (a > 0 && b > 0 && c > 0 && (a + b) > c && (b + c) > a && (c + a) > b) {
+            alert(a + "," + b + "," + c + " là 3 cạnh của 1 tam giác");
+        }
+        else {
+            alert(a + "," + b + "," + c + " không phải là 3 cạnh của 1 tam giác");
+        }
+    }
+</script>
+</body>
+</html>

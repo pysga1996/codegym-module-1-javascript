@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đánh giá học lực</title>
+    <link rel="stylesheet" href="bai_5.css" type="text/css">
+</head>
+<body>
+<h1>Bảng tính điểm tổng kết</h1>
+<table>
+    <tr>
+        <th>Tên Môn</th>
+        <th>Điểm kiểm tra miệng</th>
+        <th>Điểm kiểm tra 1 tiết</th>
+        <th>Điểm thi cuối kỳ</th>
+        <th>Điểm tổng kết</th>
+    </tr>
+    <tr>
+        <td class="subject_name">Toán</td>
+        <td><label for="1a"><input type="number" id="1a" max="10" min="0"></label></td>
+        <td><label for="1b"><input type="number" id="1b" max="10" min="0"></label></td>
+        <td><label for="1c"><input type="number" id="1c" max="10" min="0"></label></td>
+        <td id="result_1"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Vật Lý</td>
+        <td><label for="2a"><input type="number" id="2a" max="10" min="0"></label></td>
+        <td><label for="2b"><input type="number" id="2b" max="10" min="0"></label></td>
+        <td><label for="2c"><input type="number" id="2c" max="10" min="0"></label></td>
+        <td id="result_2"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Hóa học</td>
+        <td><label for="3a"><input type="number" id="3a" max="10" min="0"></label></td>
+        <td><label for="3b"><input type="number" id="3b" max="10" min="0"></label></td>
+        <td><label for="3c"><input type="number" id="3c" max="10" min="0"></label></td>
+        <td id="result_3"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Ngữ Văn</td>
+        <td><label for="4a"><input type="number" id="4a" max="10" min="0"></label></td>
+        <td><label for="4b"><input type="number" id="4b" max="10" min="0"></label></td>
+        <td><label for="4c"><input type="number" id="4c" max="10" min="0"></label></td>
+        <td id="result_4"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Lịch Sử</td>
+        <td><label for="5a"><input type="number" id="5a" max="10" min="0"></label></td>
+        <td><label for="5b"><input type="number" id="5b" max="10" min="0"></label></td>
+        <td><label for="5c"><input type="number" id="5c" max="10" min="0"></label></td>
+        <td id="result_5"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Địa lý</td>
+        <td><label for="6a"><input type="number" id="6a" max="10" min="0"></label></td>
+        <td><label for="6b"><input type="number" id="6b" max="10" min="0"></label></td>
+        <td><label for="6c"><input type="number" id="6c" max="10" min="0"></label></td>
+        <td id="result_6"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Sinh học</td>
+        <td><label for="7a"><input type="number" id="7a" max="10" min="0"></label></td>
+        <td><label for="7b"><input type="number" id="7b" max="10" min="0"></label></td>
+        <td><label for="7c"><input type="number" id="7c" max="10" min="0"></label></td>
+        <td id="result_7"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Tiếng Anh</td>
+        <td><label for="8a"><input type="number" id="8a" max="10" min="0"></label></td>
+        <td><label for="8b"><input type="number" id="8b" max="10" min="0"></label></td>
+        <td><label for="8c"><input type="number" id="8c" max="10" min="0"></label></td>
+        <td id="result_8"></td>
+    </tr>
+    <tr>
+        <td class="subject_name">Giáo dục công dân</td>
+        <td><label for="9a"><input type="number" id="9a" max="10" min="0"></label></td>
+        <td><label for="9b"><input type="number" id="9b" max="10" min="0"></label></td>
+        <td><label for="9c"><input type="number" id="9c" max="10" min="0"></label></td>
+        <td id="result_9"></td>
+    </tr>
+    <tr>
+        <td class="subject_name average"><button id="avg_cal_button">Trung bình</button></td>
+        <td class="average"></td>
+        <td class="average"></td>
+        <td class="average"></td>
+        <td class="average" id="avg_all_subject"></td>
+    </tr>
+</table>
+<div>Xếp loại học lực: <span id="rank"></span></div>
+<script charset="UTF-8" src="bai_5.js"></script>
+</body>
+</html>

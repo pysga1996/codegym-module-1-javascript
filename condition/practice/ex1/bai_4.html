@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên lớn nhất</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let a = Number(prompt("Nhập số thứ nhất", ""));
+    let b = Number(prompt("Nhập số thứ hai", ""));
+    let c = Number(prompt("Nhập số thứ ba", ""));
+    while (Number.isInteger(Number(a)) === false){
+        a = Number(prompt("Số nhập vào phải là một số nguyên", ""));
+    }
+    while (Number.isInteger(Number(b)) === false){
+        b = Number(prompt("Số nhập vào phải là một số nguyên", ""));
+    }
+    while (Number.isInteger(Number(a)) === false){
+        c = Number(prompt("Số nhập vào phải là một số nguyên", ""));
+    }
+    let max = a;
+    if (max < b){
+        max = b;
+    }
+    if (max < c){
+        max = c;
+    }
+    document.write("Số lớn nhất là " + max)
+</script>
+</body>
+</html>

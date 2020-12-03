@@ -1,0 +1,7 @@
+1. Dùng biến toàn cục nhưng khi xử lý hàm ko lấy được dữ liệu trong trường nhập mà chỉ lấy value mặc định.
+=> Xử lý: Đặt biến vào hàm (biến cục bộ) hoặc dùng biến toàn cục nhưng thêm lệnh:
+	window.onkeyup = function() {
+		global variable = document.GetElementByID("_input_field_id").value;
+	}
+2. Dùng thẻ button trong thẻ form: khi bấm button sẽ reload lại trang
+=> xử lý: ko dùng thẻ form hoặc hay thẻ form bằng thẻ input type="button".

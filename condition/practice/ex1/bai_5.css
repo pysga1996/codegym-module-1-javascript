@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+table {
+    position: relative;
+    left: 300px;
+    top: 150px;
+}
+th {
+    background-color: azure;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    color: black;
+    padding: 5px;
+}
+td {
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    text-align: right;
+    width: 185px;
+    height: 23px;
+}
+td.average {
+    height: 27px;
+}
+td.subject_name {
+    text-align: center;
+}
+label {
+    width: 185px;
+    height: 23px;
+}
+input {
+    text-align: right;
+    width: 185px;
+    height: 23px;
+}
+h1 {
+    position: absolute;
+    width: 500px;
+    height: 10px;
+    left: 610px;
+    top: 100px;
+}
+button#avg_cal_button {
+    font-style: oblique;
+    text-align: center;
+    width: 185px;
+    height: 23px;
+}
+div {
+    position: absolute;
+    left: 620px;
+    top: 490px;
+    font-size: larger;
+    font-weight: bold;
+}

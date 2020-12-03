@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<div id="menu"></div>
+<form action="" method="get">
+    <label for="input">Amount: <input type="number" id="input" value=""></label> <br>
+    <label for="from">From Currency: <select id="from" required>
+    <option value="USD">USD</option>
+    <option value="JPY">JPY</option>
+    <option value="EUR">EUR</option>
+    <option value="VND">VND</option>
+</select></label><br>
+    <label for="to">To Currency: <select id="to" required>
+    <option value="USD">USD</option>
+    <option value="JPY">JPY</option>
+    <option value="EUR">EUR</option>
+    <option value="VND">VND</option>
+</select></label><br>
+    <input type="button" id="convert" value="convert"><br>
+    Result: <text id="result"></text>
+</form>
+<script charset="UTF-8" src="bai_tap.ung_dung_chuyen_doi_tien_te.js"></script>
+</body>
+</html>
+
