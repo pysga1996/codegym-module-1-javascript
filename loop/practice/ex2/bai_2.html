@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body onload="factorial_cal(Number(prompt('Điền số cần tính giai thừa', '')))">
+<script charset="UTF-8">
+    function factorial_cal(number) {
+        let i;
+        let factorial = 1;
+        for (i = 0; i < number; i++) {
+            factorial *= (i + 1);
+        }
+        document.write("Giai thừa của " + number + " là " + factorial)
+    }
+</script>
+</body>
+</html>

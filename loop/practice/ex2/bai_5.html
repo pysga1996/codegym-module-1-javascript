@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let principal = Number(prompt("Điền số tiền gốc", ""));
+    let interest_rate = Number(prompt("Điền lãi suất (%)", ""));
+    let month = Number(prompt("Điền số tháng gửi tiền", ""));
+    let interest;
+    let sum;
+    sum = principal;
+    let i;
+    for (i = 0; i < month; i++) {
+        sum *= (interest_rate / 100 + 1);
+        interest = sum - principal;
+    }
+    interest = interest.toLocaleString();
+    document.write("Số tiền lãi sau " + month + " tháng là " + interest + " đồng");
+</script>
+</body>
+</html>

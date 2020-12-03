@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function decimal_check(x) {
+        return String(Math.floor(x)).length < String(x).length;
+    }
+    let numbers = prompt("Khai báo số lượng số nguyên tố cần in ra", "");
+    let N;
+    let is_prime;
+    let count;
+    while (decimal_check(numbers) || parseFloat(numbers) < 0) {
+        numbers = prompt("Số lượng số nguyên tố phải là một số tự nhiên, hãy nhập lại!", "");
+    }
+    numbers = parseFloat(numbers);
+    if (numbers === 0) {
+    	count = 0;
+    }
+    else {
+    	N = 2;
+    	is_prime = true;
+    	document.write(N++ + "<br>");
+    	count = 1;
+    }
+    while (count < numbers) {
+        let M = 2;
+        while (M < N) {
+            if (N % M === 0){
+                is_prime = false;
+                break;
+            }
+            else {is_prime = true;}
+            M++;
+        }
+        if (is_prime) {
+            document.write(N + "<br>");
+            count++;
+            N += 2;
+        }
+        else {N += 2;}
+    }
+</script>
+</body>
+</html>

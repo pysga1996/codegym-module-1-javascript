@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<div>
+</div>
+<script charset="UTF-8">
+    let x = prompt("Nhập số", "");
+    let string ="";
+    let i;
+    for (i = 0; i < x.length; i++) {
+        let is_first_number_even = (x[i] % 2) === 0;
+        let is_second_number_even = (x[i + 1] % 2) === 0;
+        if (i === x.length - 1) {
+            string += x[i];
+        }
+        else {
+            if (is_first_number_even && is_second_number_even) {
+                string += x[i] + "-";
+            } else {
+                string += x[i];
+            }
+        }
+    }
+</script>
+</body>
+</html>

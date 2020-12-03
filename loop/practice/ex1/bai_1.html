@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let i = 1;
+    function count() {
+        if (i % 25 === 0 && i < 100){
+            document.write(i + ",&nbsp;&nbsp;" + "<br>" + "<br>");
+        }
+        else if (i === 100) {
+            document.write(i);
+            alert("Đã hoàn thành!");
+            clearInterval(func);
+        }
+        else {
+            document.write(i + ",&nbsp;&nbsp;")
+        }
+        i++;
+    }
+    let func = setInterval(count, 100);
+</script>
+</body>
+</html>

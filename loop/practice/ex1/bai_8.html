@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let max = Number(prompt("Hãy nhập số tối thiểu", ""));
+    let min = Number(prompt("Hãy nhập số tối đa", ""));
+    let random_number = 0;
+    let guess_number = 1;
+    while (random_number !== guess_number) {
+        random_number = Math.floor(Math.random() * (max - min + 1)) + min;
+        guess_number = Number(prompt("Hãy nhập số mà bạn đoán", ""));
+        if (guess_number > random_number) {
+            alert("Sai rồi, số đúng là " + random_number + " nhỏ hơn số bạn nhập");
+        } else if (guess_number < random_number) {
+            alert("Sai rồi, số đúng là " + random_number + " lớn hơn số bạn nhập");
+        } else {
+            alert("Chúc mừng, số đúng là " + random_number);
+        }
+    }
+</script>
+</body>
+</html>

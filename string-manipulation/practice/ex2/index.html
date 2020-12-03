@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Textarea on Typing</title>
+    <link rel="stylesheet" href="fake_text_typing.css" type="text/css">
+</head>
+<body>
+<h1>Type Anything Slowly</h1>
+<label for="fake"><textarea name="Fake Text" id="fake" cols="30" rows="10"></textarea></label>
+<script charset="UTF-8">
+let i = 0;
+let fake_text = "";
+let fake_text_base = ["Y", "o", "u", " ", "a", "r", "e", " ", "a", "n", " ", "i", "d", "i", "o", "t", ".", ""];
+let real_text = document.getElementById("fake");
+function fake_the_text() {
+    if (i === 18) {
+        fake_text = "";
+        i = 0;
+    }
+    fake_text = fake_text + fake_text_base[i];
+    real_text.value = fake_text;
+    i++;
+}
+document.getElementById("fake").onkeyup = fake_the_text;
+</script>
+</body>
+</html>

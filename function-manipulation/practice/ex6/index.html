@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="bai_tap.tic-tac-toe.css" type="text/css">
+</head>
+<body>
+<h3>Tic Tac Toe</h3>&nbsp;
+<button id="restart_button">Chơi lại</button>
+<script charset="UTF-8">
+    // Tạo bàn cờ //
+    document.write("<table style='position:absolute; left:75px'>");
+    let i;
+    let j;
+    for (i = 0; i < 28; i++) {
+        document.write("<tr>");
+        for (j = 0; j < 60; j++) {
+            document.write("<td><input type='button' id='" + i + "#" + j + "' onclick='move(this)' value=''/></td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+    // Reset game //
+    function restart() {
+        let i, j;
+        for (i = 0; i < 28; i++) {
+            for (j = 0; j < 60; j++)
+                document.getElementById(i + "#" + j).value = "";
+        }
+    }
+    let restart_button = document.getElementById("restart_button");
+    restart_button.onclick = function () {
+        restart();
+    };
+
+    // Tạo chức năng điền vào ô //
+
+    let your_turn = true;
+    function move(x) {
+        if (your_turn === true) {
+            x.value = "X";
+            your_turn = false;
+        }
+        else {
+            x.value = "O";
+            your_turn = true;
+        }
+        let a = Number(x.id.substr(0, String(parseFloat(x.id)).length)); // stt hàng //
+        let b = Number(x.id.substr(String(parseFloat(x.id)).length + 1, x.id.length - String(parseFloat(x.id)).length - 1)); // stt cột //
+
+        // Tạo biến các ô lân cận để kiểm tra //
+        // Ô trái-trên theo đường chéo //
+        let lt1 = document.getElementById(String(a - 1) + "#" + String(b - 1));
+        let lt2 = document.getElementById(String(a - 2) + "#" + String(b - 2));
+        let lt3 = document.getElementById(String(a - 3) + "#" + String(b - 3));
+        let lt4 = document.getElementById(String(a - 4) + "#" + String(b - 4));
+
+        // Ô trên theo đường dọc //
+        let t1 = document.getElementById(String(a - 1) + "#" + String(b));
+        let t2 = document.getElementById(String(a - 2) + "#" + String(b));
+        let t3 = document.getElementById(String(a - 3) + "#" + String(b));
+        let t4 = document.getElementById(String(a - 4) + "#" + String(b));
+
+        // Ô trên-phải theo đường chéo //
+        let tr1 = document.getElementById(String(a - 1) + "#" + String(b + 1));
+        let tr2 = document.getElementById(String(a - 2) + "#" + String(b + 2));
+        let tr3 = document.getElementById(String(a - 3) + "#" + String(b + 3));
+        let tr4 = document.getElementById(String(a - 4) + "#" + String(b + 4));
+
+        // Ô phải theo đường ngang //
+        let r1 = document.getElementById(String(a) + "#" + String(b + 1));
+        let r2 = document.getElementById(String(a) + "#" + String(b + 2));
+        let r3 = document.getElementById(String(a) + "#" + String(b + 3));
+        let r4 = document.getElementById(String(a) + "#" + String(b + 4));
+
+        // Ô phải-dưới theo đường chéo //
+        let rb1 = document.getElementById(String(a + 1) + "#" + String(b + 1));
+        let rb2 = document.getElementById(String(a + 2) + "#" + String(b + 2));
+        let rb3 = document.getElementById(String(a + 3) + "#" + String(b + 3));
+        let rb4 = document.getElementById(String(a + 4) + "#" + String(b + 4));
+
+        // Ô dưới theo đường dọc //
+        let b1 = document.getElementById(String(a + 1) + "#" + String(b));
+        let b2 = document.getElementById(String(a + 2) + "#" + String(b));
+        let b3 = document.getElementById(String(a + 3) + "#" + String(b));
+        let b4 = document.getElementById(String(a + 4) + "#" + String(b));
+
+        // Ô dưới-trái theo đường chéo //
+        let bl1 = document.getElementById(String(a + 1) + "#" + String(b - 1));
+        let bl2 = document.getElementById(String(a + 2) + "#" + String(b - 2));
+        let bl3 = document.getElementById(String(a + 3) + "#" + String(b - 3));
+        let bl4 = document.getElementById(String(a + 4) + "#" + String(b - 4));
+
+        // Ô trái theo đường ngang //
+        let l1 = document.getElementById(String(a) + "#" + String(b - 1));
+        let l2 = document.getElementById(String(a) + "#" + String(b - 2));
+        let l3 = document.getElementById(String(a) + "#" + String(b - 3));
+        let l4 = document.getElementById(String(a) + "#" + String(b - 4));
+
+        // Kiểm tra thẳng hàng với các ô lân cận //
+        // Kiểm tra trái-trên phải-dưới //
+        if (a >= 4 && b >= 4 && x.value === lt4.value && x.value === lt3.value 
+        	&& x.value === lt2.value && x.value === lt1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 3 && b >= 3 && a <= 26 && b <= 58 && x.value === lt3.value 
+        	&& x.value === lt2.value && x.value === lt1.value && x.value === rb1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 2 && b >= 2 && a <= 25 && b <= 57 && x.value === lt2.value 
+        	&& x.value === lt1.value && x.value === rb1.value && x.value === rb2.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 1 && b >= 1 && a <= 24 && b <= 56 && x.value === lt1.value 
+        	&& x.value === rb1.value && x.value === rb2.value && x.value === rb3.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a <= 23 && b <= 55 && x.value === rb1.value && x.value === rb2.value 
+        	&& x.value === rb3.value && x.value === rb4.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+
+        // Kiểm tra trên dưới //
+        else if (a >= 4 && x.value === t4.value && x.value === t3.value 
+        	&& x.value === t2.value && x.value === t1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 3 && a <= 26 && x.value === t3.value && x.value === t2.value 
+        	&& x.value === t1.value && x.value === b1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 2 && a <= 25 && x.value === t2.value && x.value === t1.value 
+        	&& x.value === b1.value && x.value === b1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 1 && a <= 24 && x.value === t1.value && x.value === b1.value 
+        	&& x.value === b2.value && x.value === b3.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a <= 23 && x.value === b1.value && x.value === b2.value 
+        	&& x.value === b3.value && x.value === b4.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+
+        // Kiểm tra trên-phải dưới-trái //
+        else if (a >= 4 && b <= 55 && x.value === tr4.value 
+        	&& x.value === tr3.value && x.value === tr2.value && x.value === tr1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 3 && b <= 56 && a <= 26 && b >= 1 && x.value === tr3.value 
+        	&& x.value === tr2.value && x.value === tr1.value && x.value === bl1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 2 && b <= 57 && a <= 25 && b >= 2 && x.value === tr2.value 
+        	&& x.value === tr1.value && x.value === bl1.value && x.value === bl2.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a >= 1 && b <= 58 && a <= 24 && b >= 3 && x.value === tr1.value 
+        	&& x.value === bl1.value && x.value === bl2.value && x.value === bl3.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (a <= 23 && b >= 4 && x.value === bl1.value && x.value === bl2.value 
+        	&& x.value === bl3.value && x.value === bl4.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+
+        // Kiểm tra phải - trái //
+        else if (b >= 4 && x.value === l4.value && x.value === l3.value 
+        	&& x.value === l2.value && x.value === l1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (b >= 3 && b <= 58 && x.value === l3.value && x.value === l2.value 
+        	&& x.value === l1.value && x.value === r1.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (b >= 2 && b <= 57 && x.value === l2.value && x.value === l1.value 
+        	&& x.value === r1.value && x.value === r2.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (b >= 1 && b <= 56 && x.value === l1.value && x.value === r1.value 
+        	&& x.value === r2.value && x.value === r3.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+        else if (b <= 55 && x.value === r1.value && x.value === r2.value 
+        	&& x.value === r3.value && x.value === r4.value) {
+            alert("Người chơi " + x.value + " thắng");
+        }
+    }
+</script>
+</body>
+</html>

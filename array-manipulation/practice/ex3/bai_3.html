@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let x = prompt("Nhập chuỗi", "");
+    let string = "";
+    let i;
+    for (i = 0; i < x.length; i++) {
+        if (x[i] === x[i].toUpperCase()) {
+            string += x[i].toLowerCase()
+        }
+        else if (x[i] === x[i].toLowerCase()) {
+            string += x[i].toUpperCase()
+        }
+    }
+    document.write(string);
+</script>
+</body>
+</html>

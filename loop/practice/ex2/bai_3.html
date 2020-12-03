@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let i, j, k;
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < i + 1; j++) {
+            document.write("*");
+        }
+        document.write("<br>")
+    }
+    document.write("<br><br>");
+    for (i = 0; i < 5; i++) {
+        for (j = 4 - i; j >= 0; j--) {
+            document.write("*");
+        }
+        document.write("<br>")
+    }
+    document.write("<br><br>");
+    for (i = 0; i < 5; i++) {
+        for (j = 4 - i; j >= 0; j--) {
+            document.write("&nbsp;&nbsp;");
+        }
+        for (k = 0; k < i + 1; k++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<br><br>");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < i + 1; j++) {
+            document.write("&nbsp;&nbsp;");
+        }
+        for (k = 4 - i; k >= 0; k--) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

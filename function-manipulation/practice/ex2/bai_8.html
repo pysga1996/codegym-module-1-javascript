@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body onload="array_invert()">
+<script charset="UTF-8">
+    function array_invert() {
+        let my_array = [];
+        let i;
+        for (i = 0; i < 6; i++) {
+            while (isNaN(Number(my_array[i])) || String(my_array[i]).length > String(parseInt(my_array[i])).length) {
+                my_array[i] = prompt("Nhập số thứ " + (i + 1) + " phải là số nguyên");
+            }
+            if (i < 5) {
+                my_array[i + 1] = prompt("Nhập số thứ " + (i + 2));
+            }
+        }
+        document.write("Mảng nhập vào là: " + my_array + "<br>");
+        for (i = 0; i < 3; i++) {
+            let temp = my_array[i];
+            my_array[i] = my_array[5 - i];
+            my_array[5 - i] = temp;
+        }
+        document.write("Mảng đảo ngược là: " + my_array);
+    }
+</script>
+</body>
+</html>

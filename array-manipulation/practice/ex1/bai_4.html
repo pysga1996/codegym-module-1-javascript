@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <style>
+        input {
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<h3>Nhập vào chuỗi</h3>
+<label for="x1"><input type="number" id="x1" oninput="revert_array(); integer_check(this)"></label>
+<label for="x2"><input type="number" id="x2" oninput="revert_array(); integer_check(this)"></label>
+<label for="x3"><input type="number" id="x3" oninput="revert_array(); integer_check(this)"></label>
+<label for="x4"><input type="number" id="x4" oninput="revert_array(); integer_check(this)"></label>
+<label for="x5"><input type="number" id="x5" oninput="revert_array(); integer_check(this)"></label>
+<label for="x6"><input type="number" id="x6" oninput="revert_array(); integer_check(this)"></label>
+<label for="x7"><input type="number" id="x7" oninput="revert_array(); integer_check(this)"></label>
+<label for="x8"><input type="number" id="x8" oninput="revert_array(); integer_check(this)"></label>
+<label for="x9"><input type="number" id="x9" oninput="revert_array(); integer_check(this)"></label>
+<label for="x10"><input type="number" id="x10" oninput="revert_array()"></label>
+<h3>Chuỗi nghịch đảo</h3>
+<label for="y1"><input type="number" id="y1" disabled></label>
+<label for="y2"><input type="number" id="y2" disabled></label>
+<label for="y3"><input type="number" id="y3" disabled></label>
+<label for="y4"><input type="number" id="y4" disabled></label>
+<label for="y5"><input type="number" id="y5" disabled></label>
+<label for="y6"><input type="number" id="y6" disabled></label>
+<label for="y7"><input type="number" id="y7" disabled></label>
+<label for="y8"><input type="number" id="y8" disabled></label>
+<label for="y9"><input type="number" id="y9" disabled></label>
+<label for="y10"><input type="number" id="y10" disabled></label>
+<script charset="UTF-8">
+    function integer_check(x) {
+        if (isNaN(Number(x.value)) || String(x.value).length > String(parseInt(x.value)).length) {
+            alert("Hãy nhập số nguyên");
+            x.value = "";
+        }
+    }
+    function revert_array() {
+        let i;
+        for (i = 1; i <= 10; i++) {
+            document.getElementById("y" + i).value = document.getElementById("x" + (11 - i)).value;
+        }
+    }
+</script>
+</body>
+</html>

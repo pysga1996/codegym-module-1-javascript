@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h1>English-Vietnamese Dictionary</h1>
+<label for="search_box"><input type="text" id="search_box" value=""></label><br>
+Nghĩa: <span id="meaning"></span><br>
+<label for="search_button"><input type="button" id="search_button" value="Search"></label>
+<script charset="UTF-8">
+    let en_dict = ["chateau", "baron", "baroness", "viscount", "viscountess", "earl", "countess", "marquis", "marchioness", "duke", "duchess", "grand duke", "grand duchess"];
+    let vi_dict = ["lâu đài", "nam tước", "nam tước phu nhân", "tử tước", "tử tước phu nhân", "bá tước", "bá tước phu nhân", "hầu tước", "hầu tước phu nhân", "công tước", "công tước phu nhân", "đại công tước", "đại công tước phu nhân"];
+    function search() {
+        let is_the_word_in_dict = false;
+        let word_to_search = document.getElementById("search_box");
+        let meaning = document.getElementById("meaning");
+        let i;
+        for (i = 0; i < en_dict.length; i++) {
+            if (word_to_search.value.toLowerCase() === en_dict[i]) {
+                is_the_word_in_dict = true;
+                break;
+            }
+        }
+        if (is_the_word_in_dict) {
+            meaning.innerHTML = vi_dict[i];
+        }
+        else {meaning.innerHTML = "Không tìm thấy"}
+    }
+    let search_button = document.getElementById("search_button");
+    search_button.onclick = function () {
+        search();
+    }
+</script>
+</body>
+</html>

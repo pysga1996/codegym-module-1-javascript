@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body onload="number_swap()">
+<script charset="UTF-8">
+    function number_swap() {
+        let x = prompt("Nhập số nguyên thứ nhất vào", "");
+        while (isNaN(Number(x)) || String(parseInt(x)).length < x.length) {
+            x = prompt("Nhập số nguyên, không nhập số thập phân hoặc chữ", "");
+        }
+        let y = prompt("Nhập số nguyên thứ hai", "");
+        while (isNaN(Number(y)) || String(parseInt(y)).length < y.length) {
+            y = prompt("Nhập số nguyên, không nhập số thập phân hoặc chữ", "");
+        }
+        let temp = x;
+        x = y;
+        y = temp;
+        document.write("Số thứ nhất là " + x + "<br>");
+        document.write("Số thứ hai là " + y);
+    }
+</script>
+</body>
+</html>

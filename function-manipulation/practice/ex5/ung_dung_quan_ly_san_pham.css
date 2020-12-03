@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+table {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+tr {
+    position: relative;
+}
+th {
+    position: relative;
+    width: 200px;
+    height: 50px;
+}
+td {
+    position: relative;
+    width: 200px;
+    height: 50px;
+}
+td.product_name {
+    text-align: center;
+}
+input.edit {
+    position: absolute;
+    color: floralwhite;
+    background-color: limegreen;
+    width: 70px;
+    height: 30px;
+    left: 32%;
+    top: 22%;
+    border-radius: 5px;
+}
+input.delete {
+    position: absolute;
+    color: floralwhite;
+    background-color: limegreen;
+    width: 70px;
+    height: 30px;
+    left: 32%;
+    top: 22%;
+    border-radius: 5px;
+}
+input#new_product {
+    box-sizing: border-box;
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    left: 30px;
+    bottom: 20px;
+    text-indent: 7px;
+}
+input#add_button {
+    position: absolute;
+    color: floralwhite;
+    background-color: limegreen;
+    width: 70px;
+    height: 30px;
+    right: 30px;
+    bottom: 20px;
+    border-radius: 5px;
+}
+div#add_area {
+    position: relative;
+    background-color: lightgray;
+    margin: 20px;
+    padding: 20px;
+    width: 500px;
+    height: 34px;
+}
+h3 {
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+h3#edit_area_title {
+    position: relative;
+    left: 10px;
+    top: 50px;
+    bottom: 10px;
+    display: none;
+}
+div#edit_area {
+    position: relative;
+    background-color: lightgray;
+    margin: 20px;
+    padding: 20px;
+    width: 500px;
+    height: 80px;
+    top: 50px;
+    display: none;
+}
+input#current_product {
+    box-sizing: border-box;
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    left: 30px;
+    top: 20px;
+    text-indent: 7px;
+}
+input#edit_button {
+    position: absolute;
+    color: floralwhite;
+    background-color: limegreen;
+    width: 70px;
+    height: 30px;
+    right: 30px;
+    top: 20px;
+    border-radius: 5px;
+    display: none;
+}
+input#edit_show_hide_button {
+    position: absolute;
+    color: floralwhite;
+    background-color: limegreen;
+    width: 70px;
+    height: 30px;
+    left: 30px;
+    bottom: 20px;
+    border-radius: 5px;
+    display: none;
+}

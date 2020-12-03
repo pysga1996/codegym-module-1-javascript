@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let array_a = [0, -2, 31, 1, -5];
+    document.write("Mảng a là [" + array_a + "]<br>");
+    let array_b =  [95, 82, -7, -4, 6];
+    document.write("Mảng b là [" + array_b + "]<br>");
+    function concatenate_2_arrays(arr1, arr2) {
+         return arr1.concat(arr2);
+
+    }
+    let array_c = concatenate_2_arrays(array_a, array_b);
+    document.write("Nối mảng a với mảng b thành mảng c là [" + array_c + "]<br>");
+</script>
+</body>
+</html>

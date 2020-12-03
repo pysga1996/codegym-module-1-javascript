@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script charset="UTF-8">
+    document.write("20 số đầu tiên của dãy fibonacci<br>");
+    let f1 = 1;
+    let f2 = 1;
+    document.write("f(1) = " + f1 + "<br>");
+    document.write("f(2) = " + f2 + "<br>");
+    let i;
+    for (i = 3; i <= 20; i++) {
+        let temp = f2;
+        f2 += f1;
+        f1 = temp;
+        document.write("f(" + i + ") = " + f2 + "<br>");
+    }
+</script>
+</body>
+</html>

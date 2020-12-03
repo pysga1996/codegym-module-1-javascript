@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+Điền ngôi sao: <br>
+<label for="search_box"><input type="text" id="search_box"></label>
+<label for="search_button"><input type="button" id="search_button" value="Tìm kiếm"></label><br>
+Chòm sao tương ứng: <span id="result" ></span>
+<script charset="UTF-8">
+function search_constellation(star) {
+    let stars = ["polaris", "aldebaran", "deneb", "vega", "altair", "dubhe", "regulus"];
+    let constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let i;
+    let success = false;
+    for (i = 0; i < 7; i++) {
+        if (star.toLowerCase() === stars[i]) {
+            document.getElementById("result").innerHTML = constellations[i];
+            success = true;
+            break;
+        }
+    }
+    if (success === false) {
+        alert("Không tìm thấy ngôi sao")
+    }
+}
+    let search_box = document.getElementById("search_box");
+    let search_button = document.getElementById("search_button");
+    search_button.onclick = function() {
+        search_constellation(search_box.value);
+    }
+</script>
+</body>
+</html>

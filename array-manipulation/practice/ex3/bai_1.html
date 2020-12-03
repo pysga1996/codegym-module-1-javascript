@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+Các phần tử của mảng: <br>
+<label for="x1"><input type="text" id="x1" value=""></label>
+<label for="x2"><input type="text" id="x2" value=""></label>
+<label for="x3"><input type="text" id="x3" value=""></label>
+<label for="x4"><input type="text" id="x4" value=""></label>
+<label for="x5"><input type="text" id="x5" value=""></label><br>
+Result is: <span id="result"></span><br>
+<input type="button" id="connect" onclick="array_values_connect()" value="Nối các giá trị trong mảng">
+<script charset="UTF-8">
+    let my_array = [];
+    function array_values_connect() {
+        let i;
+        let x1 = document.getElementById("x1");
+        let x2 = document.getElementById("x2");
+        let x3 = document.getElementById("x3");
+        let x4 = document.getElementById("x4");
+        let x5 = document.getElementById("x5");
+        let x = [x1, x2, x3, x4, x5];
+        let string = "";
+        for (i = 0; i < 5; i++) {
+            if(x[i].value !== "") {
+                my_array.push(x[i].value);
+            }
+        }
+        for (i = 0; i < my_array.length; i++) {
+            if (i === (my_array.length - 1)) {
+                string += my_array[i]
+            }
+            else {string += my_array[i] + ",";}
+        }
+        document.getElementById("result").innerHTML = string;
+    }
+    
+</script>
+</body>
+</html>

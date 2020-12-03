@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chuỗi đối xứng</title>
+</head>
+<body onload="isPalindrome(prompt('Nhập chuỗi ký tự', ''))">
+<script charset="UTF-8">
+    function isPalindrome(s){
+        let my_array = s.split("");
+        let i;
+        let isPalindrome;
+        for (i = 0; i < String(s).length; i++) {
+            if (my_array[i] === my_array[String(s).length - 1 - i]) {
+                isPalindrome = true;
+            }
+            else {
+                isPalindrome = false;
+                break;
+            }
+        }
+        if (isPalindrome) {
+            document.write("true");
+            return true;
+        }
+        else {
+            document.write("false");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

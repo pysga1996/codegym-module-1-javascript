@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function count_numbers(arr) {
+        let count = 0;
+        let arr_element;
+        for (let i = 0; i < arr.length; i++) {
+            arr_element = String(arr[i]).split("");
+            for (let j = 0; j < arr_element.length; j++) {
+                if(isNaN(Number(arr_element[j])) === false) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    let my_array = ['c', -5.2, 's', -6, 'c', 2, '6', '1', '5.3', 'g'];
+    document.write(count_numbers(my_array));
+</script>
+</body>
+</html>

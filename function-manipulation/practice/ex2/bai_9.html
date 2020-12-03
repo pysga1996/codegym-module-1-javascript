@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body onload="check_your_fav_pkm_type()">
+<script charset="UTF-8">
+    function check_your_fav_pkm_type() {
+        let pokemon_type = ["normal", "fire", "fighting", "water", "flying", "grass", "poison", "electric", "ground",
+            "psychic", "rock", "ice", "bug", "dragon", "ghost", "dark", "steel", "fairy", "normal", "ghost", "ghost", "dragon", "dragon", "dragon"];
+        let favorite_type = prompt("Which is your favorite Pokemon type?", "");
+        let i;
+        let check = false;
+        let count = 0;
+        for (i = 0; i < 24; i++) {
+            if (favorite_type.toLowerCase() === pokemon_type[i]) {
+                check = true;
+                count += 1;
+            }
+        }
+        if (check) {
+            document.write("Số lần xuất hiện: " + count);
+        }
+        else {
+            count = -1;
+            document.write("Số lần xuất hiện: " + count);
+        }
+        return count;
+    }
+
+</script>
+</body>
+</html>

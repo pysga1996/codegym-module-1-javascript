@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body onload="check_V_appearance_in_array(my_array)">
+<script charset="UTF-8">
+    let my_array = [0, -2, 31, 1, -5, 95, 82, -7, -4, 6];
+    let V = Number(prompt("Nhập số nguyên V"));
+    function check_V_appearance_in_array(arr) {
+        let V_appearance = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (V === arr[i]) {
+                V_appearance = true;
+                break;
+            }
+        }
+        if (V_appearance) {
+            document.write("V có trong mảng");
+        }
+        else {document.write("V không có trong mảng");}
+    }
+</script>
+</body>
+</html>

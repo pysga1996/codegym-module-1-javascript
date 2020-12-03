@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body onload="sort_array_descending(my_array)">
+<script charset="UTF-8">
+    let my_array = [0, -2, 31, 1, -5, 95, 82, -7, -4, 6];
+    function sort_array_descending(arr) {
+        document.write("Mảng ban đầu là [" + arr + "]<br>");
+        arr.sort(function(a, b) {return b - a;});
+        document.write("Mảng sau khi sắp xếp là [" + arr + "]<br>");
+    }
+</script>
+</body>
+</html>

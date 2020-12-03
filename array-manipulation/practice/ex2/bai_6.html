@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script charset="UTF-8">
+    function replace_(arr) {
+        let arr_element;
+        for (let i = 0; i < arr.length; i++) {
+            arr_element = String(arr[i]).split("");
+            arr[i] = "";
+            for (let j = 0; j < arr_element.length; j++) {
+                if(arr_element[j] === "-") {
+                    arr_element[j] = "_";
+                }
+                arr[i] += arr_element[j];
+            }
+        }
+        return arr;
+    }
+    let my_array = ["bai-1", "bai_2", "bai-3", "bai-4", "bai-5", "bai_6"];
+    document.write("Chuỗi ban đầu là [" + my_array + "]<br>");
+    document.write("Chuỗi sau khi thay đổi là [" + replace_(my_array) + "]")
+</script>
+</body>
+</html>

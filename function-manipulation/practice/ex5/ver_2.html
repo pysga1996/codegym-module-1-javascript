@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="ShowProducts(listProduct, tbody)">
+<h3> Add New Product</h3>
+<form>
+    <input id="NewProduct" type="text" placeholder="New product"/>
+    <input type="button" value="ADD" onclick="addProduct(listProduct, this.parentElement.children[0].value)"/>
+</form>
+<table>
+    <tbody>
+    <tr>
+        <td>Product Name </td>
+        <td> Edit </td>
+        <td> Delete </td>
+    </tr>
+    </tbody>
+    <tbody id="products">
+
+    </tbody>
+</table>
+<script>
+    function ShowProducts(listProduct, tbody) {
+        let data = " ";
+        for (let i=0; i<listProduct.length; i++) {
+            data += "<tr>";
+            data += "<td>";
+            data += listProduct[i];
+            data += "</td>";
+            data += "<td><input type='button' value='Edit' onclick='edit()'></td>";
+            data += "<td><input type='button' value='Delete' onclick='xoa("+i+")'></td>";
+            data += "</tr>";
+        }
+        tbody.innerHTML = data;
+    }
+    let listProduct = ['Sony', 'Samsung', 'Nokia', 'IPhone 6S'];
+    let tbody = document.getElementById("products");
+    function addProduct(listProduct, new_product) {
+        if (new_product != null) {
+            listProduct.push(new_product);
+        }
+        ShowProducts(listProduct, tbody);
+    }
+    function xoa(i) {
+        listProduct.splice(i,1);
+        ShowProducts(listProduct, tbody);
+    }
+    function edit(i) {
+        let x = document.getElementById('NewProduct').value;
+        listProduct.splice(i,1,x);
+        ShowProducts(listProduct, tbody);
+    }
+</script>
+</body>
+</html>

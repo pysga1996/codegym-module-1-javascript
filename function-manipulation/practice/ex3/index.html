@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa Feet và Meters</title>
+</head>
+<body>
+<h2>Foot-Meter Converter</h2>
+Foot: <label for="foot"><input type="number" id="foot" value=""></label><br>
+Meter: <label for="meter"><input type="number" id="meter" value=""></label>
+<script charset="UTF-8">
+    let foot = document.getElementById("foot");
+    let meter = document.getElementById("meter");
+    function foot_to_meter() {
+        meter.value = 0.305 * foot.value;
+    }
+    function meter_to_foot() {
+        foot.value = 3.279 * meter.value;
+    }
+    foot.oninput = foot_to_meter;
+    meter.oninput = meter_to_foot;
+</script>
+</body>
+</html>

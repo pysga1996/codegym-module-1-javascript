@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let my_array = [0, -2, 31, 1, -5, 95, 82, -7, -4, 6];
+    let i = 0;
+    let count = 0;
+    let my_new_array = [];
+    while (i < 10) {
+        if (my_array[i] < 0) {
+            my_new_array.push(my_array[i]);
+            count++;
+        }
+        i++;
+    }
+    document.write("Chuỗi ban đầu có " + count + " số nguyên âm đó là " + my_new_array)
+</script>
+</body>
+</html>

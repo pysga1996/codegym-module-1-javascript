@@ -1,0 +1,9 @@
+h1 {
+    position: absolute;
+    left: 40%;
+}
+#fake {
+    position: absolute;
+    left: 42%;
+    top: 10%;
+}

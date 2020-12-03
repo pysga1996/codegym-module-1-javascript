@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let temperature = prompt("Nhập nhiệt độ", "");
+    while (temperature < 20 || temperature > 100) {
+        if (temperature > 100) {
+            temperature = prompt("Hãy giảm nhiệt độ", "");
+        }
+        else if (temperature < 20) {
+            temperature = prompt("Hãy tăng nhiệt độ", "");
+        }
+    }
+</script>
+</body>
+</html>

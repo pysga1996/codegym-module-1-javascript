@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let my_array = [0, -2, 31, 1, -5, 95, 82, -7, -4, 6];
+    let i = 0;
+    let max = my_array[0];
+    let sum = 0;
+    let average;
+    while (i < 10) {
+        if (my_array[i] > max) {
+            max = my_array[i];
+        }
+        sum += my_array[i];
+        i++;
+    }
+    average = sum / 10;
+    document.write("Chuỗi ban đầu có số nguyên lớn nhất là " + max + "<br>");
+    document.write("Giá trị trung bình của mảng là " + average);
+</script>
+</body>
+</html>

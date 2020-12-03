@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script charset="UTF-8">
+    let sum = 0;
+    let multiples_of_7_count = 0;
+    let i = 0;
+    while (i >= 0) {
+        if (multiples_of_7_count > 30) {
+            break;
+        }
+        if (i % 7 === 0) {
+            sum += i;
+            multiples_of_7_count += 1;
+        }
+        i++;
+    }
+    document.write("Tổng của 30 số tự nhiêm đầu tiên chia hết cho 7 là " + sum);
+</script>
+</body>
+</html>
